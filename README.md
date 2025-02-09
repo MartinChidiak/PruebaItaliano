@@ -1,13 +1,12 @@
-# 📦 Streamlit App Starter Kit 
+# 🍕 Aprendiendo Italiano 
 ```
-⬆️ (Replace above with your app's name)
+⬆️ Esto es una app para aprender italiano
 ```
 
-Description of the app ...
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-starter-kit.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://PruebaItaliano.streamlit.app/)
 
 ## GitHub Codespaces
 
