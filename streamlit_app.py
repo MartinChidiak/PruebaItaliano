@@ -74,20 +74,23 @@ def main():
                 respuesta_usuario = st.radio("Selecciona una opción:", opciones, key=f"pregunta_{pregunta_num}")
                 
                 # Verificar la respuesta solo si aún no se ha verificado
-                if not st.session_state['verificado']:
+                if not st.session_state.get('verificado', False):
                     if st.button("Verificar"):
+                        # Lógica de verificación...
                         if respuesta_usuario == fila['Respuesta Correcta']:
                             st.success("¡Correcto! ¡Bien hecho!")
                             st.session_state['correctas'] += 1
                         else:
                             st.error(f"Incorrecto. La respuesta correcta era: {fila['Respuesta Correcta']}")
                         st.session_state['verificado'] = True
+                        st.experimental_rerun()  # Fuerza un rerun para actualizar la UI inmediatamente.
                 else:
-                    # Botón para pasar a la siguiente pregunta
                     if st.button("Siguiente"):
                         st.session_state['pregunta_num'] += 1
                         st.session_state['opciones'] = []
                         st.session_state['verificado'] = False
+                        st.experimental_rerun()
+
             else:
                 # Mostrar el resultado final del quiz
                 puntaje = (correctas / len(datos)) * 10
