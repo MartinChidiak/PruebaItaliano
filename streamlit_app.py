@@ -16,8 +16,8 @@ def reiniciar_quiz():
 def main():
     st.title("Quiz de Italiano")
     
-    #ruta_archivo = 'quiz_italiano.xlsx'
-    ruta_archivo = 'italiano_preguntas.xlsx'
+    ruta_archivo = 'quiz_italiano.xlsx'
+    #ruta_archivo = 'italiano_preguntas.xlsx'
     
     # Cargar nombres de las solapas (temas)
     try:
