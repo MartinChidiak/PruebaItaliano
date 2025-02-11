@@ -58,13 +58,13 @@ def main():
         
         # Usar un formulario para agrupar todas las preguntas
         with st.form("quiz_form"):
-            for i, row in datos.iterrows():
-                st.markdown(f"### Pregunta {i+1} de {len(datos)}")  # Muestra el número de pregunta y el total
-                st.markdown(f"**Pregunta:** {row['Pregunta']}")
+            for idx, row in enumerate(datos.iterrows()):
+                st.markdown(f"### Pregunta {idx+1} de {len(datos)}")  # Muestra el número de pregunta y el total
+                st.markdown(f"**Pregunta:** {row[1]['Pregunta']}")
                 
                 # Mostrar las opciones barajadas previamente
-                opciones = st.session_state['opciones_random'][i]
-                st.radio("Selecciona una opción:", opciones, key=f"pregunta_{i}")
+                opciones = st.session_state['opciones_random'][row[0]]
+                st.radio("Selecciona una opción:", opciones, key=f"pregunta_{row[0]}")
                 st.write("---")
             
             submit = st.form_submit_button("Siguiente")
@@ -73,15 +73,15 @@ def main():
         if submit:
             correctas = 0
             st.markdown("## Resultados")
-            for i, row in datos.iterrows():
-                user_answer = st.session_state.get(f"pregunta_{i}")
-                correct_answer = row['Respuesta Correcta']
+            for idx, row in enumerate(datos.iterrows()):
+                user_answer = st.session_state.get(f"pregunta_{row[0]}")
+                correct_answer = row[1]['Respuesta Correcta']
                 if user_answer == correct_answer:
                     correctas += 1
-                    st.success(f"**Pregunta {i+1}:** Correcto")
+                    st.success(f"**Pregunta {idx+1}:** Correcto")
                 else:
                     st.error(
-                        f"**Pregunta {i+1}:** Incorrecto  \n"
+                        f"**Pregunta {idx+1}:** Incorrecto  \n"
                         f"Tu respuesta: *{user_answer}*  \n"
                         f"Respuesta correcta: *{correct_answer}*"
                     )
