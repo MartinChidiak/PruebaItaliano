@@ -2,6 +2,9 @@ import pandas as pd
 import random
 import streamlit as st
 
+
+
+
 # Function to load data from a .txt file (cached using st.cache_data)
 @st.cache_data
 def cargar_datos(archivo):
@@ -21,11 +24,20 @@ if uploaded_file is None:
     st.warning("Please upload a TXT file to proceed.")
     st.warning("It must maintain the exact structure: Category,Question,Correct Answer,Incorrect 1,Incorrect 2,Incorrect 3.")
 else:
+
+
+        # Cargar los datos del archivo cargado
     try:
         datos = cargar_datos(uploaded_file)
         if datos is None or datos.empty:
-            st.error("The file is empty or invalid.")
-        else:
+            raise ValueError("El archivo está vacío o no es válido.")
+    except Exception as e:
+        st.error(f"Error al cargar el archivo: {e}")
+        datos = None  # Ensure datos is defined even if there's an error
+    
+    if datos is None:
+        return  # Exit early if data couldn't be loaded
+    else:
             # Proceed with the main application logic only if data loading succeeds
             def main():
                 st.title("Italian Quiz")
