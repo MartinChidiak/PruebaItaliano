@@ -23,7 +23,7 @@ def reiniciar_quiz():
 uploaded_file = st.file_uploader("Upload a TXT file", type=["txt"])
 if uploaded_file is None:
     st.warning("Please upload a TXT file to proceed.")
-    st.warning("It must maintain the exact structure: Category,Question,Correct Answer,Incorrect 1,Incorrect 2,Incorrect 3.")
+    st.warning("It must maintain the exact structure: Categoría,Pregunta,Respuesta Correcta,Incorrecta 1,Incorrecta 2,Incorrecta 3.")
 else:
     try:
         datos = cargar_datos(uploaded_file)
