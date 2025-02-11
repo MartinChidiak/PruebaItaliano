@@ -57,14 +57,17 @@ def main():
         st.markdown("Responde todas las preguntas y presiona **Siguiente** para ver los resultados.")
         
         # Usar un formulario para agrupar todas las preguntas
+
+
         with st.form("quiz_form"):
-            for idx, (index, row) in enumerate(datos.iterrows(), start=1):  # Numerar preguntas correctamente
+            # Iterar sobre las filas del DataFrame filtrado usando enumerate
+            for idx, row in enumerate(datos.itertuples(index=False), start=1):  # Usamos itertuples para evitar problemas con índices
                 st.markdown(f"### Pregunta {idx} de {len(datos)}")  # Numeración corregida
-                st.markdown(f"**Pregunta:** {row['Pregunta']}")
+                st.markdown(f"**Pregunta:** {row.Pregunta}")  # Accedemos a los datos usando atributos
                 
                 # Mostrar las opciones barajadas previamente
-                opciones = st.session_state['opciones_random'][index]
-                st.radio("Selecciona una opción:", opciones, key=f"pregunta_{index}")
+                opciones = st.session_state['opciones_random'][idx - 1]  # Usamos idx - 1 como clave (basado en posición)
+                st.radio("Selecciona una opción:", opciones, key=f"pregunta_{idx}")  # Usamos idx como clave única
                 st.write("---")
             
             submit = st.form_submit_button("Siguiente")
@@ -73,9 +76,9 @@ def main():
         if submit:
             correctas = 0
             st.markdown("## Resultados")
-            for idx, (index, row) in enumerate(datos.iterrows(), start=1):  # Numeración corregida en resultados
-                user_answer = st.session_state.get(f"pregunta_{index}")
-                correct_answer = row['Respuesta Correcta']
+            for idx, row in enumerate(datos.itertuples(index=False), start=1):  # Iteramos nuevamente para mostrar resultados
+                user_answer = st.session_state.get(f"pregunta_{idx}")  # Obtenemos la respuesta del usuario
+                correct_answer = row.Respuesta_Correcta  # Accedemos a la respuesta correcta
                 if user_answer == correct_answer:
                     correctas += 1
                     st.success(f"**Pregunta {idx}:** Correcto")
@@ -87,6 +90,7 @@ def main():
                     )
             puntaje = (correctas / len(datos)) * 10
             st.subheader(f"Puntaje final: {puntaje:.1f} de 10")
+
             
             if st.button("Reiniciar Quiz"):
                 reiniciar_quiz()
