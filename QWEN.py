@@ -16,7 +16,7 @@ def reiniciar_quiz():
 def main():
     st.title("Quiz de Italiano")
     
-    ruta_archivo = 'PreguntasQwen.txt'  # Cambia aquí el nombre del archivo .txt
+    ruta_archivo = 'PreguntasDeepseek.txt'  # Cambia aquí el nombre del archivo .txt
     
     # Cargar los datos del archivo .txt
     try:
