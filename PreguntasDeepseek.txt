@@ -1,4 +1,4 @@
-Categoría,Pregunta,Respuesta Correcta,Respuesta Incorrecta 1,Respuesta Incorrecta 2,Respuesta Incorrecta 3
+Categoría,Pregunta,Respuesta Correcta,Incorrecta 1,Incorrecta 2,Incorrecta 3
 Gramática,¿Cuál es el artículo definido para "libro" en italiano?,Il,La,Lo,Gli
 Gramática,¿Cómo se dice "nosotros" en italiano?,Noi,Voi,Loro,Io
 Vocabulario,¿Qué significa "gatto" en español?,Gato,Perro,Pájaro,Pez
