@@ -1,0 +1,99 @@
+Categoría,Pregunta,Respuesta Correcta,Respuesta Incorrecta 1,Respuesta Incorrecta 2,Respuesta Incorrecta 3
+Gramática,¿Cuál es el artículo definido para "libro" en italiano?,Il,La,Lo,Gli
+Gramática,¿Cómo se dice "nosotros" en italiano?,Noi,Voi,Loro,Io
+Vocabulario,¿Qué significa "gatto" en español?,Gato,Perro,Pájaro,Pez
+Vocabulario,¿Cómo se dice "rojo" en italiano?,Rosso,Verde,Azul,Amarillo
+Cultura,¿Cuál es la capital de Italia?,Roma,Milán,Nápoles,Florencia
+Cultura,¿En qué ciudad italiana se encuentra la Torre inclinada?,Pisa,Venecia,Roma,Verona
+Expresiones,¿Cómo se dice "buenos días" en italiano?,Buongiorno,Buonasera,Buonanotte,Ciao
+Expresiones,¿Cómo se dice "gracias" en italiano?,Grazie,Prego,Scusa,Per favore
+Gramática,¿Cuál es la forma plural de "amico" (amigo)?,Amici,Amico,Amica,Amice
+Vocabulario,¿Qué significa "scuola" en español?,Escuela,Casa,Libro,Mesa
+Gramática,¿Cuál es el verbo "ser" en italiano para "él/ella"?,È,Sono,Sei,Siamo
+Vocabulario,¿Cómo se dice "manzana" en italiano?,Mela,Pera,Banana,Uva
+Cultura,¿Qué famoso festival de cine se celebra en Venecia?,Festival de Venecia,Festival de Cannes,Berlinale,Sundance
+Expresiones,¿Cómo se dice "por favor" en italiano?,Per favore,Grazie,Scusa,Prego
+Gramática,¿Cuál es la forma femenina de "ragazzo" (chico)?,Ragazza,Ragazzi,Ragazze,Ragazzo
+Vocabulario,¿Qué significa "sole" en español?,Sol,Luna,Estrella,Cielo
+Cultura,¿Qué famoso río pasa por Roma?,Tíber,Po,Arno,Adigio
+Expresiones,¿Cómo se dice "¿Cómo estás?" en italiano?,Come stai?,Chi sei?,Dove vai?,Quanto costa?
+Gramática,¿Cuál es el artículo definido para "casa" en italiano?,La,Il,Lo,Le
+Vocabulario,¿Qué significa "mare" en español?,Mar,Montaña,Río,Lago
+Cultura,¿Cuál es el plato italiano más famoso hecho con queso y pasta?,Spaghetti Carbonara,Pizza,Lasagna,Risotto
+Expresiones,¿Cómo se dice "adiós" en italiano?,Arrivederci,Ciao,Buonanotte,Grazie
+Gramática,¿Cuál es la forma plural de "ragazzo" (chico)?,Ragazzi,Ragazza,Ragazze,Ragazzo
+Vocabulario,¿Qué significa "libro" en español?,Libro,Cuaderno,Lápiz,Mesa
+Cultura,¿Qué famoso pintor italiano pintó la Mona Lisa?,Leonardo da Vinci,Miguel Ángel,Rafael,Donatello
+Expresiones,¿Cómo se dice "sí" en italiano?,Sì,No,Forse,Mai
+Gramática,¿Cuál es el artículo definido para "amico" (amigo) en italiano?,L',Il,La,Lo
+Vocabulario,¿Qué significa "notte" en español?,Noche,Día,Tarde,Mañana
+Cultura,¿Qué famoso canal atraviesa Venecia?,Canal Grande,Canal de Suez,Canal de Panamá,Canal de la Mancha
+Expresiones,¿Cómo se dice "hola" en italiano?,Ciao,Buongiorno,Buonasera,Arrivederci
+Gramática,¿Cuál es la forma plural de "casa" (casa)?,Case,Casi,Caso,Cose
+Vocabulario,¿Qué significa "giorno" en español?,Día,Noche,Tarde,Mañana
+Cultura,¿Qué famoso volcán italiano entró en erupción en el año 79 d.C.?,Vesubio,Etna,Stromboli,Monte Blanco
+Expresiones,¿Cómo se dice "no" en italiano?,No,Sì,Forse,Mai
+Gramática,¿Cuál es el artículo definido para "stella" (estrella) en italiano?,La,Il,Lo,Le
+Vocabulario,¿Qué significa "acqua" en español?,Agua,Fuego,Tierra,Aire
+Cultura,¿Qué famoso poeta italiano escribió "La Divina Comedia"?,Dante Alighieri,Petrarca,Boccaccio,Leopardi
+Expresiones,¿Cómo se dice "por favor" en italiano?,Per favore,Grazie,Scusa,Prego
+Gramática,¿Cuál es la forma plural de "stella" (estrella)?,Stelle,Stelli,Stella,Stelli
+Vocabulario,¿Qué significa "terra" en español?,Tierra,Agua,Fuego,Aire
+Cultura,¿Qué famoso compositor italiano escribió "La Traviata"?,Giuseppe Verdi,Giacomo Puccini,Gioachino Rossini,Antonio Vivaldi
+Expresiones,¿Cómo se dice "buenas noches" en italiano?,Buonanotte,Buongiorno,Buonasera,Ciao
+Gramática,¿Cuál es el artículo definido para "montagna" (montaña) en italiano?,La,Il,Lo,Le
+Vocabulario,¿Qué significa "fuoco" en español?,Fuego,Agua,Tierra,Aire
+Cultura,¿Qué famoso explorador italiano es conocido por viajar a China?,Marco Polo,Cristóbal Colón,Amerigo Vespucci,Ferdinand Magellan
+Expresiones,¿Cómo se dice "hasta luego" en italiano?,A presto,Ciao,Arrivederci,Buonanotte
+Gramática,¿Cuál es la forma plural de "montagna" (montaña)?,Montagne,Montagni,Montagna,Montagno
+Vocabulario,¿Qué significa "aria" en español?,Aire,Agua,Fuego,Tierra
+Cultura,¿Qué famoso científico italiano es conocido por sus estudios en física y astronomía?,Galileo Galilei,Leonardo da Vinci,Nicolás Copérnico,Isaac Newton
+Expresiones,¿Cómo se dice "de nada" en italiano?,Prego,Grazie,Scusa,Per favore
+Gramática,¿Cuál es el artículo definido para "fiume" (río) en italiano?,Il,La,Lo,Le
+Vocabulario,¿Qué significa "luna" en español?,Luna,Sol,Estrella,Cielo
+Cultura,¿Qué famoso diseñador de moda italiano fundó la marca Gucci?,Guccio Gucci,Giorgio Armani,Valentino Garavani,Donatella Versace
+Expresiones,¿Cómo se dice "buenas tardes" en italiano?,Buonasera,Buongiorno,Buonanotte,Ciao
+Gramática,¿Cuál es la forma plural de "fiume" (río)?,Fiumi,Fiume,Fiuma,Fiumo
+Vocabulario,¿Qué significa "cielo" en español?,Cielo,Tierra,Mar,Montaña
+Cultura,¿Qué famoso escultor italiano esculpió el David?,Miguel Ángel,Donatello,Bernini,Cellini
+Expresiones,¿Cómo se dice "¿Qué tal?" en italiano?,Come va?,Come stai?,Chi sei?,Dove vai?
+Gramática,¿Cuál es el artículo definido para "albero" (árbol) en italiano?,L',Il,La,Lo
+Vocabulario,¿Qué significa "vento" en español?,Viento,Agua,Fuego,Tierra
+Cultura,¿Qué famoso tenor italiano es conocido por canciones como "Nessun Dorma"?,Luciano Pavarotti,Andrea Bocelli,Enrico Caruso,Plácido Domingo
+Expresiones,¿Cómo se dice "con permiso" en italiano?,Permesso,Scusa,Prego,Grazie
+Gramática,¿Cuál es la forma plural de "albero" (árbol)?,Alberi,Albero,Albera,Albere
+Vocabulario,¿Qué significa "neve" en español?,Nieve,Lluvia,Viento,Sol
+Cultura,¿Qué famoso arquitecto italiano diseñó la cúpula de la Catedral de Florencia?,Filippo Brunelleschi,Donato Bramante,Miguel Ángel,Leonardo da Vinci
+Expresiones,¿Cómo se dice "lo siento" en italiano?,Mi dispiace,Scusa,Prego,Grazie
+Gramática,¿Cuál es el artículo definido para "sole" (sol) en italiano?,Il,La,Lo,Le
+Vocabulario,¿Qué significa "pioggia" en español?,Lluvia,Nieve,Viento,Sol
+Cultura,¿Qué famoso escritor italiano escribió "El Príncipe"?,Nicolás Maquiavelo,Dante Alighieri,Giovanni Boccaccio,Francesco Petrarca
+Expresiones,¿Cómo se dice "¿Hablas italiano?" en italiano?,Parli italiano?,Parla italiano?,Parlate italiano?,Parlo italiano?
+Gramática,¿Cuál es la forma plural de "sole" (sol)?,Soli,Sole,Sola,Sole
+Vocabulario,¿Qué significa "nuvola" en español?,Nube,Lluvia,Viento,Sol
+Cultura,¿Qué famoso compositor italiano es conocido por "Las Cuatro Estaciones"?,Antonio Vivaldi,Giuseppe Verdi,Gioachino Rossini,Giacomo Puccini
+Expresiones,¿Cómo se dice "¿Dónde está el baño?" en italiano?,Dove è il bagno?,Dove è la stazione?,Dove è il ristorante?,Dove è l'hotel?
+Gramática,¿Cuál es el artículo definido para "lago" (lago) en italiano?,Il,La,Lo,Le
+Vocabulario,¿Qué significa "tempesta" en español?,Tormenta,Lluvia,Viento,Nieve
+Cultura,¿Qué famoso pintor italiano es conocido por "El Nacimiento de Venus"?,Sandro Botticelli,Leonardo da Vinci,Miguel Ángel,Rafael
+Expresiones,¿Cómo se dice "¿Cuánto cuesta?" en italiano?,Quanto costa?,Quanto è?,Quanto dura?,Quanto pesa?
+Gramática,¿Cuál es la forma plural de "lago" (lago)?,Laghi,Lago,Laga,Lage
+Vocabulario,¿Qué significa "arcobaleno" en español?,Arcoíris,Nube,Lluvia,Viento
+Cultura,¿Qué famoso científico italiano es conocido por inventar la pila eléctrica?,Alessandro Volta,Galileo Galilei,Leonardo da Vinci,Enrico Fermi
+Expresiones,¿Cómo se dice "¿Qué hora es?" en italiano?,Che ora è?,Che giorno è?,Che mese è?,Che anno è?
+Gramática,¿Cuál es el artículo definido para "montagna" (montaña) en italiano?,La,Il,Lo,Le
+Vocabulario,¿Qué significa "foresta" en español?,Bosque,Desierto,Playa,Montaña
+Cultura,¿Qué famoso compositor italiano es conocido por "La Bohème"?,Giacomo Puccini,Giuseppe Verdi,Gioachino Rossini,Antonio Vivaldi
+Expresiones,¿Cómo se dice "¿Cómo te llamas?" en italiano?,Come ti chiami?,Come stai?,Dove vai?,Quanto costa?
+Gramática,¿Cuál es la forma plural de "montagna" (montaña)?,Montagne,Montagni,Montagna,Montagno
+Vocabulario,¿Qué significa "deserto" en español?,Desierto,Bosque,Playa,Montaña
+Cultura,¿Qué famoso escritor italiano es conocido por "El Decamerón"?,Giovanni Boccaccio,Dante Alighieri,Francesco Petrarca,Nicolás Maquiavelo
+Expresiones,¿Cómo se dice "¿De dónde eres?" en italiano?,Di dove sei?,Dove vai?,Come stai?,Quanto costa?
+Gramática,¿Cuál es el artículo definido para "isola" (isla) en italiano?,L',Il,La,Lo
+Vocabulario,¿Qué significa "spiaggia" en español?,Playa,Desierto,Bosque,Montaña
+Cultura,¿Qué famoso compositor italiano es conocido por "Rigoletto"?,Giuseppe Verdi,Giacomo Puccini,Gioachino Rossini,Antonio Vivaldi
+Expresiones,¿Cómo se dice "¿Qué haces?" en italiano?,Cosa fai?,Cosa vuoi?,Cosa dici?,Cosa vedi?
+Gramática,¿Cuál es la forma plural de "isola" (isla)?,Isole,Isola,Isole,Isole
+Vocabulario,¿Qué significa "cielo" en español?,Cielo,Tierra,Mar,Montaña
+Cultura,¿Qué famoso pintor italiano es conocido por "La Última Cena"?,Leonardo da Vinci,Miguel Ángel,Rafael,Sandro Botticelli
+Expresiones,¿Cómo se dice "¿Qué pasa?" en italiano?,Cosa succede?,Cosa fai?,Cosa vuoi?,Cosa dici?
