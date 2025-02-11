@@ -3,7 +3,7 @@ import random
 import streamlit as st
 
 # Función para cargar datos desde un archivo .txt (cacheada)
-@st.cache_data
+@st.cache
 def cargar_datos(ruta_archivo):
     return pd.read_csv(ruta_archivo)
 
