@@ -58,19 +58,22 @@ def main():
         
         # Usar un formulario para agrupar todas las preguntas
 
-
-
         with st.form("quiz_form"):
-            # Iterar sobre las preguntas usando un rango que comienza en 1
-            for idx in range(1, len(datos) + 1):  # idx va de 1 a len(datos)
-                row = datos.iloc[idx - 1]  # Accedemos a la fila usando .iloc (restamos 1 porque .iloc es base 0)
-                st.markdown(f"### Pregunta {idx} de {len(datos)}")  # Numeración correcta (idx ya empieza en 1)
+            # Inicializar idx en 1
+            idx = 1
+            
+            # Iterar sobre las filas del DataFrame filtrado
+            for index, row in datos.iterrows():  # Usamos iterrows para recorrer las filas
+                st.markdown(f"### Pregunta {idx} de {len(datos)}")  # Numeración correcta (idx empieza en 1)
                 st.markdown(f"**Pregunta:** {row['Pregunta']}")  # Accedemos a los datos usando el nombre de la columna
                 
                 # Mostrar las opciones barajadas previamente
-                opciones = st.session_state['opciones_random'][idx - 1]  # Usamos idx - 1 como clave (basado en posición)
+                opciones = st.session_state['opciones_random'][index]  # Usamos el índice original como clave
                 st.radio("Selecciona una opción:", opciones, key=f"pregunta_{idx}")  # Usamos idx como clave única
                 st.write("---")
+                
+                # Incrementar idx manualmente
+                idx += 1
             
             submit = st.form_submit_button("Siguiente")
         
@@ -78,23 +81,27 @@ def main():
         if submit:
             correctas = 0
             st.markdown("## Resultados")
-            for idx in range(1, len(datos) + 1):  # Iteramos nuevamente para mostrar resultados
-                row = datos.iloc[idx - 1]  # Accedemos a la fila usando .iloc (restamos 1 porque .iloc es base 0)
+            
+            # Reiniciar idx en 1 para mostrar los resultados
+            idx = 1
+            
+            for index, row in datos.iterrows():  # Iteramos nuevamente para mostrar resultados
                 user_answer = st.session_state.get(f"pregunta_{idx}")  # Obtenemos la respuesta del usuario
                 correct_answer = row['Respuesta Correcta']  # Accedemos a la respuesta correcta
                 if user_answer == correct_answer:
                     correctas += 1
-                    st.success(f"**Pregunta {idx}:** Correcto")  # Numeración correcta (idx ya empieza en 1)
+                    st.success(f"**Pregunta {idx}:** Correcto")  # Numeración correcta (idx empieza en 1)
                 else:
                     st.error(
                         f"**Pregunta {idx}:** Incorrecto  \n"
                         f"Tu respuesta: *{user_answer}*  \n"
                         f"Respuesta correcta: *{correct_answer}*"
                     )
+                # Incrementar idx manualmente
+                idx += 1
+            
             puntaje = (correctas / len(datos)) * 10
-            st.subheader(f"Puntaje final: {puntaje:.1f} de 10")
-
-
+            st.subheader(f
 
             
             if st.button("Reiniciar Quiz"):
