@@ -1,0 +1,81 @@
+Categoría,Pregunta,Respuesta Correcta,Incorrecta 1,Incorrecta 2,Incorrecta 3
+Vocabulario Básico,¿Cómo se dice "hola" en italiano?,Ciao,Hola,Bonjour,Hello
+Vocabulario Básico,¿Qué significa "grazie"?,Gracias,Adiós,Por favor,Lo siento
+Gramática,¿Cuál es el artículo definido para "il libro"?,Il,La,I,Gli
+Gramática,¿Cómo se conjuga el verbo "essere" en presente para "io"?,Sono,Sei,Sta,Siamo
+Cultura Italiana,¿Cuál es la capital de Italia?,Roma,Milán,Venecia,Florencia
+Cultura Italiana,¿En qué ciudad se encuentra el Coliseo?,Roma,Venecia,Nápoles,Turín
+Comida,¿Cómo se dice "pizza" en italiano?,Pizza,Pasta,Risotto,Gelato
+Comida,¿Qué postre italiano tradicional es conocido por ser helado?,Gelato,Tiramisú,Cannoli,Panna cotta
+Números,¿Cómo se escribe el número "cinco" en italiano?,Cinque,Tre,Sette,Dieci
+Números,¿Qué número es "dieci" en italiano?,10,5,7,15
+Verbos,¿Qué significa "mangiare"?,Comer,Beber,Dormir,Hablar
+Verbos,¿Cómo se dice "yo hablo" en italiano?,Io parlo,Io mangio,Io dormo,Io bevo
+Lugares,¿Cómo se dice "playa" en italiano?,Spiaggia,Mare,Montagna,Lago
+Lugares,¿Qué palabra italiana significa "ciudad"?,Città,Paese,Villaggio,Regione
+Expresiones Comunes,¿Cómo se dice "por favor" en italiano?,Per favore,Grazie,Scusa,Arrivederci
+Expresiones Comunes,¿Qué expresión italiana significa "hasta luego"?,Arrivederci,Ciao,Buongiorno,Buonanotte
+Vocabulario Básico,¿Cómo se dice "adiós" en italiano?,Arrivederci,Ciao,Buongiorno,Buonanotte
+Vocabulario Básico,¿Qué significa "scusa"?,Perdón,Gracias,Por favor,Hola
+Gramática,¿Cuál es el artículo definido para "la casa"?,La,Il,I,Gli
+Gramática,¿Cómo se conjuga el verbo "avere" en presente para "tu"?,Hai,Ho,Hanno,Ha
+Cultura Italiana,¿En qué región de Italia se encuentra Venecia?,Veneto,Toscana,Lombardía,Sicilia
+Cultura Italiana,¿Qué famosa torre inclinada está en Pisa?,Torre de Pisa,Coliseo,Palacio Ducal,Basilica de San Marcos
+Comida,¿Cómo se dice "pasta" en italiano?,Pasta,Pizza,Risotto,Gnocchi
+Comida,¿Qué tipo de comida italiana es similar a los ñoquis?,Gnocchi,Pasta,Ravioli,Lasagna
+Números,¿Cómo se escribe el número "siete" en italiano?,Sette,Uno,Tre,Cinque
+Números,¿Qué número es "venti" en italiano?,20,10,15,25
+Verbos,¿Qué significa "bere"?,Beber,Comer,Dormir,Hablar
+Verbos,¿Cómo se dice "él come" en italiano?,Lui mangia,Lui beve,Lui dorme,Lui parla
+Lugares,¿Cómo se dice "montaña" en italiano?,Montagna,Mare,Spiaggia,Collina
+Lugares,¿Qué palabra italiana significa "lago"?,Lago,Mare,Montagna,Fiume
+Expresiones Comunes,¿Cómo se dice "buenos días" en italiano?,Buongiorno,Buonasera,Buonanotte,Ciao
+Expresiones Comunes,¿Qué expresión italiana significa "buenas noches"?,Buonanotte,Buongiorno,Buonasera,Ciao
+Vocabulario Básico,¿Cómo se dice "agua" en italiano?,Acqua,Vino,Birra,Caffè
+Vocabulario Básico,¿Qué significa "vino"?,Wine,Water,Beer,Coffee
+Gramática,¿Cuál es el artículo definido para "gli amici"?,Gli,Il,La,I
+Gramática,¿Cómo se conjuga el verbo "andare" en presente para "noi"?,Andiamo,Vai,Vanno,Va
+Cultura Italiana,¿Qué famoso pintor italiano pintó la Mona Lisa?,Leonardo da Vinci,Michelangelo,Rafael,Donatello
+Cultura Italiana,¿En qué ciudad nació Dante Alighieri?,Florencia,Venecia,Roma,Milán
+Comida,¿Cómo se dice "queso" en italiano?,Formaggio,Pane,Pasta,Pizza
+Comida,¿Qué tipo de queso italiano es famoso por su forma de rueda grande?,Parmigiano-Reggiano,Mozzarella,Gorgonzola,Ricotta
+Números,¿Cómo se escribe el número "nueve" en italiano?,Nove,Uno,Tres,Cinco
+Números,¿Qué número es "quindici" en italiano?,15,5,10,20
+Verbos,¿Qué significa "dormire"?,Dormir,Comer,Beber,Hablar
+Verbos,¿Cómo se dice "nosotros comemos" en italiano?,Noi mangiamo,Noi beviamo,Noi dormiamo,Noi parliamo
+Lugares,¿Cómo se dice "río" en italiano?,Fiume,Mare,Montagna,Lago
+Lugares,¿Qué palabra italiana significa "colina"?,Collina,Montagna,Spiaggia,Lago
+Expresiones Comunes,¿Cómo se dice "buenas tardes" en italiano?,Buonasera,Buongiorno,Buonanotte,Ciao
+Expresiones Comunes,¿Qué expresión italiana significa "disculpe"?,Mi scusi,Grazie,Per favore,Ciao
+Vocabulario Básico,¿Cómo se dice "pan" en italiano?,Pane,Pasta,Pizza,Formaggio
+Vocabulario Básico,¿Qué significa "caffè"?,Coffee,Wine,Beer,Water
+Gramática,¿Cuál es el artículo definido para "le case"?,Le,Il,La,I
+Gramática,¿Cómo se conjuga el verbo "fare" en presente para "loro"?,Fanno,Faccio,Fai,Fa
+Cultura Italiana,¿Qué famoso escultor italiano creó el David?,Michelangelo,Leonardo da Vinci,Rafael,Donatello
+Cultura Italiana,¿En qué ciudad se encuentra la famosa Ópera "La Scala"?,Milán,Venecia,Roma,Florencia
+Comida,¿Cómo se dice "carne" en italiano?,Carne,Pesce,Verdura,Frutta
+Comida,¿Qué tipo de carne italiana es famosa por ser curada y ahumada?,Prosciutto,Pollo,Cordero,Ternera
+Números,¿Cómo se escribe el número "uno" en italiano?,Uno,Dos,Tres,Cuatro
+Números,¿Qué número es "trenta" en italiano?,30,10,20,40
+Verbos,¿Qué significa "parlare"?,Hablar,Comer,Beber,Dormir
+Verbos,¿Cómo se dice "ella bebe" en italiano?,Lei beve,Lei mangia,Lei dorme,Lei parla
+Lugares,¿Cómo se dice "bosque" en italiano?,Foresta,Mare,Montagna,Lago
+Lugares,¿Qué palabra italiana significa "valle"?,Valle,Montagna,Spiaggia,Lago
+Expresiones Comunes,¿Cómo se dice "con permiso" en italiano?,Permesso,Grazie,Per favore,Ciao
+Expresiones Comunes,¿Qué expresión italiana significa "feliz cumpleaños"?,Buon compleanno,Buon Natale,Buona Pasqua,Buon Anno
+Vocabulario Básico,¿Cómo se dice "fruta" en italiano?,Frutta,Verdura,Carne,Pesce
+Vocabulario Básico,¿Qué significa "pesce"?,Fish,Fruit,Meat,Vegetable
+Gramática,¿Cuál es el artículo definido para "i libri"?,I,Il,La,Gli
+Gramática,¿Cómo se conjuga el verbo "vedere" en presente para "voi"?,Vedete,Vedo,Vede,Vediamo
+Cultura Italiana,¿Qué famoso compositor italiano escribió "Las Cuatro Estaciones"?,Antonio Vivaldi,Giuseppe Verdi,Giacomo Puccini,Gioachino Rossini
+Cultura Italiana,¿En qué ciudad se celebra el Carnaval más famoso de Italia?,Venecia,Roma,Florencia,Milán
+Comida,¿Cómo se dice "verdura" en italiano?,Verdura,Frutta,Carne,Pesce
+Comida,¿Qué tipo de verdura italiana es famosa por su forma alargada y verde?,Zucchina,Pomodoro,Peperone,Cipolla
+Números,¿Cómo se escribe el número "dos" en italiano?,Due,Uno,Tres,Cuatro
+Números,¿Qué número es "quaranta" en italiano?,40,10,20,30
+Verbos,¿Qué significa "scrivere"?,Escribir,Leer,Hablar,Escuchar
+Verbos,¿Cómo se dice "ellos escriben" en italiano?,Loro scrivono,Loro leggono,Loro parlano,Loro ascoltano
+Lugares,¿Cómo se dice "desierto" en italiano?,Deserto,Mare,Montagna,Lago
+Lugares,¿Qué palabra italiana significa "isla"?,Isola,Mare,Montagna,Lago
+Expresiones Comunes,¿Cómo se dice "te amo" en italiano?,Ti amo,Ti voglio bene,Grazie,Ciao
+Expresiones Comunes,¿Qué expresión italiana significa "feliz año nuevo"?,Buon Anno,Buon Natale,Buona Pasqua,Buon compleanno
