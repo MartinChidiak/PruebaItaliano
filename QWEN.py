@@ -16,7 +16,7 @@ def reiniciar_quiz():
 def main():
     st.title("Quiz de Italiano")
     
-    ruta_archivo = 'PreguntasQwen.txt'  # Cambia aquí el nombre del archivo .txt
+    ruta_archivo = 'preguntas_italiano.txt'  # Cambia aquí el nombre del archivo .txt
     
     # Cargar los datos del archivo .txt
     try:
@@ -40,7 +40,7 @@ def main():
         
         # Filtrar los datos según el tema seleccionado
         if 'datos' not in st.session_state:
-            datos_filtrados = datos[datos['Categoría'] == st.session_state['tema_seleccionado']]
+            datos_filtrados = datos[datos['Categoría'] == st.session_state['tema_seleccionado']].reset_index(drop=True)
             st.session_state['datos'] = datos_filtrados
         datos = st.session_state['datos']
         
@@ -59,7 +59,7 @@ def main():
         # Usar un formulario para agrupar todas las preguntas
         with st.form("quiz_form"):
             for i, row in datos.iterrows():
-                st.markdown(f"### Pregunta {i+1} de {len(datos)}")
+                st.markdown(f"### Pregunta {i+1} de {len(datos)}")  # Muestra el número de pregunta y el total
                 st.markdown(f"**Pregunta:** {row['Pregunta']}")
                 
                 # Mostrar las opciones barajadas previamente
