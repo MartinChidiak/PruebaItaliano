@@ -31,7 +31,7 @@ else:
             st.error("The file is empty or invalid.")
         else:
             # Proceed with the main application logic only if data loading succeeds
-            def main():
+            def main(datos):
                 st.title("Italian Quiz")
 
                 # If no topic has been selected, show the selection
@@ -52,12 +52,12 @@ else:
                         datos_filtrados = datos[datos['Categoría'] == st.session_state['tema_seleccionado']].reset_index(drop=True)
                         st.session_state['datos'] = datos_filtrados
 
-                    datos = st.session_state['datos']
+                    datos_filtrados = st.session_state['datos']
 
                     # Pre-calculate and store each question's options randomly
                     if 'opciones_random' not in st.session_state:
                         opciones_random = {}
-                        for i, row in datos.iterrows():
+                        for i, row in datos_filtrados.iterrows():
                             opciones = [row['Respuesta Correcta'], row['Incorrecta 1'], row['Incorrecta 2'], row['Incorrecta 3']]
                             random.shuffle(opciones)
                             opciones_random[i] = opciones
@@ -68,8 +68,8 @@ else:
 
                     with st.form("quiz_form"):
                         idx = 1
-                        for index, row in datos.iterrows():
-                            st.markdown(f"### Question {idx} of {len(datos)}")
+                        for index, row in datos_filtrados.iterrows():
+                            st.markdown(f"### Question {idx} of {len(datos_filtrados)}")
                             st.markdown(f"**Question:** {row['Pregunta']}")
 
                             opciones = st.session_state['opciones_random'][index]
@@ -84,7 +84,7 @@ else:
                         st.markdown("## Results")
 
                         idx = 1
-                        for index, row in datos.iterrows():
+                        for index, row in datos_filtrados.iterrows():
                             user_answer = st.session_state.get(f"pregunta_{idx}")
                             correct_answer = row['Respuesta Correcta']
                             if user_answer == correct_answer:
@@ -98,7 +98,7 @@ else:
                                 )
                             idx += 1
 
-                        puntaje = (correctas / len(datos)) * 10
+                        puntaje = (correctas / len(datos_filtrados)) * 10
                         st.subheader(f"Final Score: {puntaje:.1f} out of 10")
 
                         if st.button("Restart Quiz"):
@@ -106,7 +106,7 @@ else:
                             return
 
             if __name__ == "__main__":
-                main()
+                main(datos)
 
     except Exception as e:
         st.error(f"An unexpected error occurred: {e}")
