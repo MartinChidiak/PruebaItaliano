@@ -43,7 +43,7 @@ else:
             else:
                 # Proceed with the main application logic only if data loading succeeds
                 def main(datos):
-                    st.title("Italian Quiz")
+                    st.title("Quiz")
 
                     # If no topic has been selected, show the selection
                     if 'tema_seleccionado' not in st.session_state:
