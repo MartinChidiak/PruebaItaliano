@@ -2,3 +2,4 @@ pandas
 streamlit>=0.65.0
 openpyxl
 flask
+werkzeug
