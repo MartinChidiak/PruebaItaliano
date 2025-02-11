@@ -8,7 +8,7 @@ def cargar_datos(archivo):
     if archivo is not None:
         try:
             # Intenta cargar el archivo con diferentes codificaciones si es necesario
-            datos = pd.read_csv(archivo, sep="\t", encoding='utf-8')  # Ajusta el separador y la codificación
+            datos = pd.read_csv(archivo, sep=",", encoding='utf-8')  # Ajusta el separador y la codificación
             st.write("### Vista previa del archivo cargado:")
             st.write(datos.head())  # Muestra las primeras filas del DataFrame
             st.write("### Columnas del archivo:")
