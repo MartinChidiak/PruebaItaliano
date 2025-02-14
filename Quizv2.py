@@ -130,7 +130,7 @@ def main():
                 if correctas + incorrectas > 0:
                     fig, ax = plt.subplots()
                     ax.pie(
-                        [correctas, incorrectas],
+                        [correctas, len(datos)-correctas],
                         labels=['Correctas', 'Incorrectas'],
                         autopct='%1.1f%%',
                         startangle=90,
