@@ -35,6 +35,7 @@ def main():
         tema = st.selectbox("Selecciona un tema:", solapas)
         if st.button("Seleccionar tema"):
             st.session_state['tema_seleccionado'] = tema
+            st.rerun()
     else:
         # Botón para cambiar de tema (reinicia el quiz)
         if st.button("Cambiar tema"):
