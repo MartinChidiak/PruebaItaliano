@@ -64,7 +64,7 @@ def main():
                     opciones_random[i] = opciones
                 st.session_state['opciones_random'] = opciones_random
             
-            st.markdown("## Quiz")
+        
             st.markdown("Responde todas las preguntas y presiona **Siguiente** para ver los resultados.")
             
             # Usar un formulario para agrupar todas las preguntas
