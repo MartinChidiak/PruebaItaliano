@@ -10,9 +10,16 @@ def cargar_datos(ruta_archivo, solapa):
 
 
 def reiniciar_quiz():
-    st.session_state.clear()  # Elimina todo el session_state
-    st.rerun()  # Recarga la aplicación
-
+    # Reiniciar todas las respuestas a None
+    for key in list(st.session_state.keys()):
+        if key.startswith("pregunta_"):
+            st.session_state[key] = None
+    
+    # Limpiar el resto del session_state
+    st.session_state.clear()
+    
+    # Recargar la aplicación
+    st.rerun()
 
 
 def main():
