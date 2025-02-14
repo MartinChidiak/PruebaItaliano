@@ -1,6 +1,6 @@
 import pandas as pd
 import random
-import streamlit as st
+import streamlit as st 
 
 # Función para cargar datos desde Excel (cacheada)
 @st.cache_data
@@ -18,17 +18,16 @@ def reiniciar_quiz():
             del st.session_state[key]
 
 def main():
-    st.title("Quiz de Italiano")
-    
+    st.title("Quiz de Italiano") 
     ruta_archivo = 'quiz_italiano.xlsx'
-    
+
     # Cargar nombres de las solapas (temas)
     try:
         solapas = pd.ExcelFile(ruta_archivo).sheet_names
     except Exception as e:
         st.error(f"Error al cargar el archivo Excel: {e}")
         return
-    
+
     # Si no se ha seleccionado un tema, se muestra la selección
     if 'tema_seleccionado' not in st.session_state:
         st.write("### Seleccione el tema a estudiar:")
@@ -60,6 +59,11 @@ def main():
         st.markdown("## Quiz")
         st.markdown("Responde todas las preguntas y presiona **Siguiente** para ver los resultados.")
         
+        # Limpiar las respuestas anteriores antes de mostrar el formulario
+        for key in list(st.session_state.keys()):
+            if key.startswith("pregunta_"):
+                del st.session_state[key]
+        
         # Usar un formulario para agrupar todas las preguntas
         with st.form("quiz_form"):
             for i, row in datos.iterrows():
@@ -81,7 +85,23 @@ def main():
             for i, row in datos.iterrows():
                 user_answer = st.session_state.get(f"pregunta_{i}")
                 correct_answer = row['Respuesta Correcta']
-                if user_answer == correct_answer:
+                if user_answer is None:
+                    st.warning(f"**Pregunta {i+1}:** No seleccionaste ninguna opción.")
+                elif user_answer == correct_answer:
                     correctas += 1
                     st.success(f"**Pregunta {i+1}:** Correcto")
                 else:
+                    st.error(
+                        f"**Pregunta {i+1}:** Incorrecto  \n"
+                        f"Tu respuesta: *{user_answer}*  \n"
+                        f"Respuesta correcta: *{correct_answer}*"
+                    )
+            puntaje = (correctas / len(datos)) * 10
+            st.subheader(f"Puntaje final: {puntaje:.1f} de 10")
+            
+            if st.button("Reiniciar Quiz"):
+                reiniciar_quiz()
+                return
+
+if __name__ == "__main__":
+    main()
