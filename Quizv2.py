@@ -10,13 +10,21 @@ def cargar_datos(ruta_archivo, solapa):
 
 # Función para reiniciar el quiz (limpiar session_state)
 def reiniciar_quiz():
+    # Eliminar las variables del estado de sesión
     for key in ['tema_seleccionado', 'datos', 'opciones_random', 'idioma_seleccionado']:
         if key in st.session_state:
             del st.session_state[key]
-    # Limpiar también las respuestas de las preguntas
+
+    # Eliminar todas las respuestas almacenadas
     for key in list(st.session_state.keys()):
-        if key.startswith("pregunta_"):
+        if key.startswith("pregunta_") or key.startswith("radio_"):
             del st.session_state[key]
+
+    # Restaurar las selecciones a None (opcional pero recomendable)
+    for key in list(st.session_state.keys()):
+        if key.startswith("pregunta_") or key.startswith("radio_"):
+            st.session_state[key] = None
+
 
 def main():
     st.title("Quiz de Italiano") 
