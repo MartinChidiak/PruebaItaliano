@@ -85,8 +85,7 @@ else:
 
                                 opciones = st.session_state['opciones_random'][index]
                                 #st.radio("Select an option:", opciones, index = None, key=f"pregunta_{idx}")
-                                opciones_con_vacia = ["Seleccione una opción"] + opciones  # Agregar opción vacía al inicio
-                                st.radio("Select an option:", opciones_con_vacia, index=0, key=f"pregunta_{idx}") 
+                                st.selectbox("Select an option:", [None] + opciones, key=f"pregunta_{idx}", format_func=lambda x: " " if x is None else x)
                                 st.write("---")
                                 idx += 1
 
