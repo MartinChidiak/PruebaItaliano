@@ -139,7 +139,7 @@ def main():
                     ax.axis('equal')  # Mantiene el círculo
                     st.pyplot(fig)
                 else:
-                    st.warning("No se seleccionó ninguna respuesta.")
+                    st.warning("No se seleccionó ninguna respuesta, no se puede generar el gráfico.")
 
 
                 if st.button("Reiniciar Quiz"):
