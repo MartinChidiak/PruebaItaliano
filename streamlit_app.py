@@ -68,15 +68,20 @@ def main():
                 
                 # Mostrar las opciones barajadas previamente
                 opciones = st.session_state['opciones_random'][i]
-                # Usar el estado de la sesión para mantener la selección del usuario
+                
+                # Inicializar la respuesta en session_state si no existe
                 if f"pregunta_{i}" not in st.session_state:
                     st.session_state[f"pregunta_{i}"] = None
+                
+                # Widget de selección (sin opción preseleccionada)
                 respuesta = st.radio(
                     "Selecciona una opción:",
                     opciones,
-                    index=opciones.index(st.session_state[f"pregunta_{i}"]) if st.session_state[f"pregunta_{i}"] in opciones else 0,
+                    index=None,  # Ninguna opción preseleccionada
                     key=f"radio_{i}"
                 )
+                
+                # Actualizar el estado de la sesión con la respuesta seleccionada
                 st.session_state[f"pregunta_{i}"] = respuesta
                 st.write("---")
             
