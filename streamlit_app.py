@@ -12,12 +12,15 @@ def reiniciar_quiz():
     for key in ['tema_seleccionado', 'datos', 'opciones_random']:
         if key in st.session_state:
             del st.session_state[key]
+    # Limpiar también las respuestas de las preguntas
+    for key in list(st.session_state.keys()):
+        if key.startswith("pregunta_"):
+            del st.session_state[key]
 
 def main():
     st.title("Quiz de Italiano")
     
     ruta_archivo = 'quiz_italiano.xlsx'
-    #ruta_archivo = 'italiano_preguntas.xlsx'
     
     # Cargar nombres de las solapas (temas)
     try:
@@ -55,6 +58,11 @@ def main():
         
         st.markdown("## Quiz")
         st.markdown("Responde todas las preguntas y presiona **Siguiente** para ver los resultados.")
+        
+        # Limpiar las respuestas anteriores antes de mostrar el formulario
+        for key in list(st.session_state.keys()):
+            if key.startswith("pregunta_"):
+                del st.session_state[key]
         
         # Usar un formulario para agrupar todas las preguntas
         with st.form("quiz_form"):
