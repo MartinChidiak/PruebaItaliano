@@ -121,10 +121,12 @@ def main():
                         )
                 
                 puntaje = (correctas / len(datos)) * 10
-                st.subheader(f"Puntaje final: {puntaje:.1f} de 10")
+                #st.subheader(f"Puntaje final: {puntaje:.1f} de 10")
+                st.markdown(f"<h3><u>Puntaje final: {puntaje:.1f} de 10</u></h3>", unsafe_allow_html=True)
+
 
                 # Mostrar gráfico de pastel
-                st.markdown("### **Resumen de aciertos y errores**")
+              
                 fig, ax = plt.subplots()
                 ax.pie(
                     [correctas, incorrectas],
