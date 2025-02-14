@@ -60,11 +60,6 @@ def main():
         st.markdown("## Quiz")
         st.markdown("Responde todas las preguntas y presiona **Siguiente** para ver los resultados.")
         
-        # Limpiar las respuestas anteriores antes de mostrar el formulario
-        for key in list(st.session_state.keys()):
-            if key.startswith("pregunta_"):
-                del st.session_state[key]
-        
         # Usar un formulario para agrupar todas las preguntas
         with st.form("quiz_form"):
             for i, row in datos.iterrows():
@@ -74,7 +69,7 @@ def main():
                 
                 # Mostrar las opciones barajadas previamente
                 opciones = st.session_state['opciones_random'][i]
-                st.radio("Selecciona una opción:", opciones, index=None,  key=f"pregunta_{i}")
+                st.radio("Selecciona una opción:", opciones, index=None, key=f"pregunta_{i}")
                 st.write("---")
             
             submit = st.form_submit_button("Siguiente")
@@ -90,17 +85,3 @@ def main():
                     correctas += 1
                     st.success(f"**Pregunta {i+1}:** Correcto")
                 else:
-                    st.error(
-                        f"**Pregunta {i+1}:** Incorrecto  \n"
-                        f"Tu respuesta: *{user_answer}*  \n"
-                        f"Respuesta correcta: *{correct_answer}*"
-                    )
-            puntaje = (correctas / len(datos)) * 10
-            st.subheader(f"Puntaje final: {puntaje:.1f} de 10")
-            
-            if st.button("Reiniciar Quiz"):
-                reiniciar_quiz()
-                return
-
-if __name__ == "__main__":
-    main()
