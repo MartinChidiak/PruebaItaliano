@@ -8,11 +8,10 @@ import matplotlib.pyplot as plt
 def cargar_datos(ruta_archivo, solapa):
     return pd.read_excel(ruta_archivo, sheet_name=solapa)
 
-
 def reiniciar_quiz():
     # Reiniciar todas las respuestas a None
     for key in list(st.session_state.keys()):
-        if key.startswith("pregunta_"):
+        if key.startswith("pregunta_") or key.startswith("radio_"):
             st.session_state[key] = None
     
     # Limpiar el resto del session_state
