@@ -10,12 +10,9 @@ def cargar_datos(ruta_archivo, solapa):
 
 
 def reiniciar_quiz():
-    # Eliminar todas las variables almacenadas en la sesión
-    for key in list(st.session_state.keys()):
-        del st.session_state[key]
+    st.session_state.clear()  # Elimina todo el session_state
+    st.rerun()  # Recarga la aplicación
 
-    # Forzar la recarga de la aplicación para resetear el estado de los widgets
-    st.rerun()
 
 
 def main():
