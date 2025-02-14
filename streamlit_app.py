@@ -39,7 +39,7 @@ def main():
         # Botón para cambiar de tema (reinicia el quiz)
         if st.button("Cambiar tema"):
             reiniciar_quiz()
-            return  # Al limpiar el estado se reinicia la aplicación en la siguiente reejecución
+            st.rerun()  # Reiniciar la aplicación
         
         # Cargar los datos del tema seleccionado, si aún no se han cargado
         if 'datos' not in st.session_state:
@@ -59,11 +59,6 @@ def main():
         st.markdown("## Quiz")
         st.markdown("Responde todas las preguntas y presiona **Siguiente** para ver los resultados.")
         
-        # Limpiar las respuestas anteriores antes de mostrar el formulario
-        for key in list(st.session_state.keys()):
-            if key.startswith("pregunta_"):
-                del st.session_state[key]
-        
         # Usar un formulario para agrupar todas las preguntas
         with st.form("quiz_form"):
             for i, row in datos.iterrows():
@@ -73,7 +68,16 @@ def main():
                 
                 # Mostrar las opciones barajadas previamente
                 opciones = st.session_state['opciones_random'][i]
-                st.radio("Selecciona una opción:", opciones, index=None, key=f"pregunta_{i}")
+                # Usar el estado de la sesión para mantener la selección del usuario
+                if f"pregunta_{i}" not in st.session_state:
+                    st.session_state[f"pregunta_{i}"] = None
+                respuesta = st.radio(
+                    "Selecciona una opción:",
+                    opciones,
+                    index=opciones.index(st.session_state[f"pregunta_{i}"]) if st.session_state[f"pregunta_{i}"] in opciones else 0,
+                    key=f"radio_{i}"
+                )
+                st.session_state[f"pregunta_{i}"] = respuesta
                 st.write("---")
             
             submit = st.form_submit_button("Siguiente")
@@ -101,7 +105,7 @@ def main():
             
             if st.button("Reiniciar Quiz"):
                 reiniciar_quiz()
-                return
+                st.rerun()
 
 if __name__ == "__main__":
     main()
