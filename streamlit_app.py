@@ -45,7 +45,7 @@ def main():
                 st.rerun()
         else:
             # Botón para cambiar de tema (reinicia el quiz)
-            if st.button("Cambiar tema"):
+            if st.button("Volver al inicio"):
                 reiniciar_quiz()
                 st.rerun()  # Reiniciar la aplicación
             
