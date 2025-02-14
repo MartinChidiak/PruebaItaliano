@@ -2,12 +2,10 @@ import pandas as pd
 import random
 import streamlit as st
 
-# Función para cargar datos desde Excel (cacheada)
 @st.cache_data
 def cargar_datos(ruta_archivo, solapa):
     return pd.read_excel(ruta_archivo, sheet_name=solapa)
 
-# Función para reiniciar el quiz (limpiar session_state)
 def reiniciar_quiz():
     for key in ['tema_seleccionado', 'datos', 'opciones_random', 'respuestas']:
         if key in st.session_state:
@@ -18,34 +16,34 @@ def main():
     
     ruta_archivo = 'quiz_italiano.xlsx'
     
-    # Cargar nombres de las solapas (temas)
     try:
         solapas = pd.ExcelFile(ruta_archivo).sheet_names
     except Exception as e:
         st.error(f"Error al cargar el archivo Excel: {e}")
         return
     
-    # Selección del tema
     if 'tema_seleccionado' not in st.session_state:
         st.write("### Seleccione el tema a estudiar:")
         tema = st.selectbox("Selecciona un tema:", solapas)
         if st.button("Seleccionar tema"):
             st.session_state['tema_seleccionado'] = tema
-            st.session_state['respuestas'] = {}  # Inicializa respuestas
+            st.session_state['respuestas'] = {}  
             st.rerun()
     else:
-        # Botón para cambiar de tema
         if st.button("Cambiar tema"):
             reiniciar_quiz()
             st.rerun()
         
-        # Cargar datos
         if 'datos' not in st.session_state:
             datos = cargar_datos(ruta_archivo, st.session_state['tema_seleccionado'])
             st.session_state['datos'] = datos
+
         datos = st.session_state['datos']
         
-        # Generar opciones aleatorias si no se han guardado antes
+        if len(datos) == 0:
+            st.warning("No hay preguntas disponibles en este tema.")
+            return
+        
         if 'opciones_random' not in st.session_state:
             opciones_random = {}
             for i, row in datos.iterrows():
@@ -53,12 +51,11 @@ def main():
                 random.shuffle(opciones)
                 opciones_random[i] = opciones
             st.session_state['opciones_random'] = opciones_random
-        
+
         st.markdown("## Quiz")
-        st.markdown("Responde todas las preguntas y presiona **Siguiente** para ver los resultados.")
         
-        # Formulario de preguntas
         with st.form("quiz_form"):
+            st.write("Formulario iniciado")  # Depuración
             for i, row in datos.iterrows():
                 st.markdown(f"### Pregunta {i+1} de {len(datos)}")
                 st.markdown(f"**Ejercicio (Español):** {row['Ejercicio (Español)']}")
@@ -72,12 +69,10 @@ def main():
             
             submit = st.form_submit_button("Siguiente")
 
-        # Procesar respuestas después del envío
         if submit:
             st.session_state['respuestas'] = {f"pregunta_{i}": st.session_state[f"pregunta_{i}"] for i in range(len(datos))}
-            st.rerun()  # Vuelve a ejecutar para mostrar los resultados
+            st.rerun()
 
-        # Mostrar resultados si ya se enviaron respuestas
         if 'respuestas' in st.session_state and len(st.session_state['respuestas']) == len(datos):
             correctas = 0
             st.markdown("## Resultados")
