@@ -8,22 +8,14 @@ import matplotlib.pyplot as plt
 def cargar_datos(ruta_archivo, solapa):
     return pd.read_excel(ruta_archivo, sheet_name=solapa)
 
-# Función para reiniciar el quiz (limpiar session_state)
+
 def reiniciar_quiz():
-    # Eliminar las variables del estado de sesión
-    for key in ['tema_seleccionado', 'datos', 'opciones_random', 'idioma_seleccionado']:
-        if key in st.session_state:
-            del st.session_state[key]
-
-    # Eliminar todas las respuestas almacenadas
+    # Eliminar todas las variables almacenadas en la sesión
     for key in list(st.session_state.keys()):
-        if key.startswith("pregunta_") or key.startswith("radio_"):
-            del st.session_state[key]
+        del st.session_state[key]
 
-    # Restaurar las selecciones a None (opcional pero recomendable)
-    for key in list(st.session_state.keys()):
-        if key.startswith("pregunta_") or key.startswith("radio_"):
-            st.session_state[key] = None
+    # Forzar la recarga de la aplicación para resetear el estado de los widgets
+    st.rerun()
 
 
 def main():
