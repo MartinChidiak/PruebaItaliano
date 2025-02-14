@@ -9,17 +9,16 @@ def cargar_datos(ruta_archivo, solapa):
     return pd.read_excel(ruta_archivo, sheet_name=solapa)
 
 def reiniciar_quiz():
-    # Reiniciar todas las respuestas a None
+    # Reiniciar todas las respuestas a un valor predeterminado
     for key in list(st.session_state.keys()):
         if key.startswith("pregunta_") or key.startswith("radio_"):
-            st.session_state[key] = None
-    
+            st.session_state.pop(key, None)  # Elimina la clave si existe
+
     # Eliminar claves específicas relacionadas con el quiz
     keys_to_remove = ["tema_seleccionado", "datos", "opciones_random"]
     for key in keys_to_remove:
-        if key in st.session_state:
-            del st.session_state[key]
-    
+        st.session_state.pop(key, None)  # Elimina si existe
+
     # Recargar la aplicación
     st.rerun()
 
