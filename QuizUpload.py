@@ -24,6 +24,11 @@ def reiniciar_quiz():
     for key in ['tema_seleccionado', 'datos', 'opciones_random']:
         if key in st.session_state:
             del st.session_state[key]
+    
+    # Eliminar las respuestas almacenadas en session_state
+    for key in list(st.session_state.keys()):
+        if key.startswith("pregunta_"):
+            del st.session_state[key]
 
 # File upload section
 uploaded_file = st.file_uploader("Upload a TXT file", type=["txt"])
@@ -85,7 +90,6 @@ else:
                                 st.markdown(f"**Question:** {row['Pregunta']}")
 
                                 opciones = st.session_state['opciones_random'][index]
-                                #st.radio("Select an option:", opciones, index = None, key=f"pregunta_{idx}")
                                 st.selectbox("Select an option:", [None] + opciones, key=f"pregunta_{idx}", format_func=lambda x: " " if x is None else x)
                                 st.write("---")
                                 idx += 1
@@ -116,7 +120,7 @@ else:
 
                             if st.button("Restart Quiz"):
                                 reiniciar_quiz()
-                                return
+                                st.rerun()  # Recargar la aplicación para reiniciar el quiz
 
                 if __name__ == "__main__":
                     main(datos)
