@@ -20,7 +20,6 @@ def reiniciar_quiz():
     # Recargar la aplicación
     st.rerun()
 
-
 def main():
     st.title("Quiz de Italiano") 
     ruta_archivo = 'quiz_italiano.xlsx'
@@ -124,12 +123,9 @@ def main():
                         )
                 
                 puntaje = (correctas / len(datos)) * 10
-                #st.subheader(f"Puntaje final: {puntaje:.1f} de 10")
                 st.markdown(f"<h3><u>Puntaje final: {puntaje:.1f} de 10</u></h3>", unsafe_allow_html=True)
 
-
                 # Mostrar gráfico de pastel
-                # Verificar si hay respuestas seleccionadas antes de generar el gráfico
                 if correctas + incorrectas > 0:
                     fig, ax = plt.subplots()
                     ax.pie(
@@ -143,7 +139,6 @@ def main():
                     st.pyplot(fig)
                 else:
                     st.warning("No se seleccionó ninguna respuesta, no se puede generar el gráfico.")
-
 
                 if st.button("Reiniciar Quiz"):
                     reiniciar_quiz()
