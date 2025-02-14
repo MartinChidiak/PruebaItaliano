@@ -126,17 +126,21 @@ def main():
 
 
                 # Mostrar gráfico de pastel
-              
-                fig, ax = plt.subplots()
-                ax.pie(
-                    [correctas, incorrectas],
-                    labels=['Correctas', 'Incorrectas'],
-                    autopct='%1.1f%%',
-                    startangle=90,
-                    colors=['#4CAF50', '#FF5733']  # Verde para aciertos, rojo para errores
-                )
-                ax.axis('equal')  # Mantiene el círculo
-                st.pyplot(fig)
+                # Verificar si hay respuestas seleccionadas antes de generar el gráfico
+                if correctas + incorrectas > 0:
+                    fig, ax = plt.subplots()
+                    ax.pie(
+                        [correctas, incorrectas],
+                        labels=['Correctas', 'Incorrectas'],
+                        autopct='%1.1f%%',
+                        startangle=90,
+                        colors=['#4CAF50', '#FF5733']  # Verde para aciertos, rojo para errores
+                    )
+                    ax.axis('equal')  # Mantiene el círculo
+                    st.pyplot(fig)
+                else:
+                    st.warning("No se seleccionó ninguna respuesta.")
+
 
                 if st.button("Reiniciar Quiz"):
                     reiniciar_quiz()
