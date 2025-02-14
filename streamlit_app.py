@@ -73,7 +73,7 @@ def main():
                 
                 # Mostrar las opciones barajadas previamente
                 opciones = st.session_state['opciones_random'][i]
-                st.radio("Selecciona una opción:", opciones, key=f"pregunta_{i}")
+                st.radio("Selecciona una opción:", opciones, index=None,  key=f"pregunta_{i}")
                 st.write("---")
             
             submit = st.form_submit_button("Siguiente")
