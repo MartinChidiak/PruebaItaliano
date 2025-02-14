@@ -84,7 +84,7 @@ else:
                                 st.markdown(f"**Question:** {row['Pregunta']}")
 
                                 opciones = st.session_state['opciones_random'][index]
-                                st.radio("Select an option:", opciones, key=f"pregunta_{idx}")
+                                st.radio("Select an option:", opciones, index = None, key=f"pregunta_{idx}")
                                 st.write("---")
                                 idx += 1
 
