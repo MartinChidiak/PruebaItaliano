@@ -80,7 +80,7 @@ else:
                                 opciones_random[i] = opciones
                             st.session_state['opciones_random'] = opciones_random
 
-                        st.markdown("## Quiz")
+                
                         st.markdown("Answer all questions and press **Next** to see the results.")
 
                         with st.form("quiz_form"):
