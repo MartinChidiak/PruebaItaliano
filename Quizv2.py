@@ -14,8 +14,11 @@ def reiniciar_quiz():
         if key.startswith("pregunta_") or key.startswith("radio_"):
             st.session_state[key] = None
     
-    # Limpiar el resto del session_state
-    st.session_state.clear()
+    # Eliminar claves específicas relacionadas con el quiz
+    keys_to_remove = ["tema_seleccionado", "datos", "opciones_random"]
+    for key in keys_to_remove:
+        if key in st.session_state:
+            del st.session_state[key]
     
     # Recargar la aplicación
     st.rerun()
