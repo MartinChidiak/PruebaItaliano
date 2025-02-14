@@ -2,46 +2,35 @@ import pandas as pd
 import random
 import streamlit as st
 
-# Función para cargar datos desde un archivo .txt
+# Function to load data from a .txt file (cached using st.cache_data)
 @st.cache_data
 def cargar_datos(archivo):
     if archivo is not None:
         try:
-            datos = pd.read_csv(archivo, sep=",", encoding='utf-8')
+            # Intenta cargar el archivo con diferentes codificaciones si es necesario
+            datos = pd.read_csv(archivo, sep=",", encoding='utf-8')  # Ajusta el separador y la codificación
             st.write("### Vista previa del archivo cargado:")
-            st.write(datos.head())
+            st.write(datos.head())  # Muestra las primeras filas del DataFrame
             st.write("### Columnas del archivo:")
-            st.write(datos.columns.tolist())
+            st.write(datos.columns.tolist())  # Muestra las columnas del DataFrame
             return datos
         except Exception as e:
             st.error(f"Error reading the file: {e}")
             return None
     return None
 
-# Función para reiniciar el quiz
+# Function to reset the quiz (clear session_state)
 def reiniciar_quiz():
     for key in ['tema_seleccionado', 'datos', 'opciones_random']:
         if key in st.session_state:
             del st.session_state[key]
+    
     # Eliminar las respuestas almacenadas en session_state
     for key in list(st.session_state.keys()):
         if key.startswith("pregunta_"):
             del st.session_state[key]
 
-# Inyectar CSS personalizado para el selectbox
-st.markdown(
-    """
-    <style>
-    /* Cambiar el fondo del selectbox a amarillo cuando no hay selección */
-    div[data-baseweb="select"] .st-b7 {
-        background-color: yellow !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# Subida de archivo
+# File upload section
 uploaded_file = st.file_uploader("Upload a TXT file", type=["txt"])
 if uploaded_file is None:
     st.warning("Please upload a TXT file to proceed.")
@@ -52,31 +41,37 @@ else:
         if datos is None or datos.empty:
             st.error("The file is empty or invalid.")
         else:
+            # Verifica si las columnas esperadas están presentes
             columnas_esperadas = ['Categoría', 'Pregunta', 'Respuesta Correcta', 'Incorrecta 1', 'Incorrecta 2', 'Incorrecta 3']
             if not all(col in datos.columns for col in columnas_esperadas):
                 st.error(f"The file does not have the expected columns. Columns found: {datos.columns.tolist()}")
             else:
+                # Proceed with the main application logic only if data loading succeeds
                 def main(datos):
                     st.title("Quiz")
 
+                    # If no topic has been selected, show the selection
                     if 'tema_seleccionado' not in st.session_state:
                         st.write("### Select the topic to study:")
-                        temas = datos['Categoría'].unique()
+                        temas = datos['Categoría'].unique()  # Get unique categories as topics
                         tema = st.selectbox("Select a topic:", temas)
                         if st.button("Select topic"):
                             st.session_state['tema_seleccionado'] = tema
                             st.rerun()
                     else:
+                        # Button to change topic (resets the quiz)
                         if st.button("Change topic"):
                             reiniciar_quiz()
-                            return
+                            return  # Restart app after clearing state
 
+                        # Filter data according to selected topic
                         if 'datos' not in st.session_state:
                             datos_filtrados = datos[datos['Categoría'] == st.session_state['tema_seleccionado']].reset_index(drop=True)
                             st.session_state['datos'] = datos_filtrados
 
                         datos_filtrados = st.session_state['datos']
 
+                        # Pre-calculate and store each question's options randomly
                         if 'opciones_random' not in st.session_state:
                             opciones_random = {}
                             for i, row in datos_filtrados.iterrows():
@@ -95,12 +90,7 @@ else:
                                 st.markdown(f"**Question:** {row['Pregunta']}")
 
                                 opciones = st.session_state['opciones_random'][index]
-                                respuesta = st.selectbox(
-                                    "Select an option:",
-                                    [None] + opciones,
-                                    key=f"pregunta_{idx}",
-                                    format_func=lambda x: "Select an option" if x is None else x
-                                )
+                                st.selectbox("Select an option:", [None] + opciones, key=f"pregunta_{idx}", format_func=lambda x: " " if x is None else x)
                                 st.write("---")
                                 idx += 1
 
@@ -130,7 +120,7 @@ else:
 
                             if st.button("Restart Quiz"):
                                 reiniciar_quiz()
-                                st.rerun()
+                                st.rerun()  # Recargar la aplicación para reiniciar el quiz
 
                 if __name__ == "__main__":
                     main(datos)
